@@ -35,12 +35,29 @@ a {
   color: #444;
 }
 .error {
-  margin-top: 0;
+  margin: 0;
   color: crimson;
   font-weight: bold;
 }
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.button {
+  font-family: Open Sans;
+  color: #fff;
+  background-color: #555;
+  padding: 0.4rem 1rem;
+  height: 2.4375rem;
+  margin: 0;
+  border: 0;
+  padding: 0.6rem 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button--secondary {
+  background-color: #777;
 }
 
 .layout {
@@ -69,6 +86,11 @@ a {
   padding: 0 1em;
   background-color: #eee;
 }
+.layout__feature-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
 .layout__feature--bson {
   width: 100%;
   margin-top: 2em;
@@ -89,7 +111,7 @@ a {
 .bson_input {
   width: 100%;
   padding: 1em;
-  margin: -1em 0 -1em -1em;
+  margin: -1em 0 0 -1em;
   cursor: pointer;
 }
 .bson_hexinput {

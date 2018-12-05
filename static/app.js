@@ -1,13 +1,28 @@
 var bsonInputElement = document.querySelector('#bson_input')
 var bsonHexInputElement = document.querySelector('#bson_hexinput')
+var errorOutputElement = document.querySelector('.error')
 var bsonOutputElement = document.querySelector('#bson_output')
 var bsonOutputWrapperElement = document.querySelector('.layout__feature--bson')
+var deserializeElement = document.querySelector('#deserialize')
+var deserializeHexElement = document.querySelector('#deserialize-hex')
+var clearHexElement = document.querySelector('#clear-hex')
 
-bsonHexInputElement.addEventListener('change', function() {
+deserializeHexElement.addEventListener('click', function() {
   var bsonHexData = bsonHexInputElement.value
-  var bsonData = hexStringToUint8Array(bsonHexData)
-  var jsonData = BSON.deserialize(bsonData)
-  showOutput(jsonData)
+  try {
+    var bsonData = hexStringToUint8Array(bsonHexData)
+    var jsonData = BSON.deserialize(bsonData)
+    showOutput(jsonData)
+  } catch (err) {
+    showError()
+  }
+})
+
+clearHexElement.addEventListener('click', function() {
+  bsonHexInputElement.value = ''
+  bsonOutputWrapperElement.classList.add('hidden')
+  errorOutputElement.classList.add('hidden')
+  bsonOutputElement.classList.add('hidden')
 })
 
 function showOutput(output) {
@@ -15,6 +30,14 @@ function showOutput(output) {
   var html = json.replace(/\r?\n/g, '<br>')
   bsonOutputElement.innerHTML = html
   bsonOutputWrapperElement.classList.remove('hidden')
+  errorOutputElement.classList.add('hidden')
+  bsonOutputElement.classList.remove('hidden')
+}
+
+function showError() {
+  bsonOutputWrapperElement.classList.remove('hidden')
+  errorOutputElement.classList.remove('hidden')
+  bsonOutputElement.classList.add('hidden')
 }
 
 function hexStringToUint8Array(str) {

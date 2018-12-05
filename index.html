@@ -20,8 +20,9 @@
       <div class="layout__content">
         <section class="layout__feature">
           <h2>upload bson file</h2>
-          <p>Feature not available yet</p>
-          <!-- <input id="bson_input" class="bson_input" type="file" /> -->
+          <p>(not available yet)</p>
+          <input id="bson_input" class="bson_input" type="file" disabled />
+          <button id="deserialize" class="button" disabled>deserialize</button>
         </section>
         <section class="layout__feature">
           <h2>paste bson as hex</h2>
@@ -30,11 +31,15 @@
             class="bson_hexinput"
             placeholder="0xBADA55"
           ></textarea>
+          <div class="layout__feature-container">
+            <button id="deserialize-hex" class="button">deserialize</button>
+            <button id="clear-hex" class="button button--secondary">clear</button>
+          </div>
         </section>
       </div>
       <section class="layout__feature layout__feature--bson hidden">
-        <p class="error hidden">Malformed BSON!</p>
-        <code id="bson_output" class="bson_output"></code>
+        <p class="error hidden">Error: Malformed BSON!</p>
+        <code id="bson_output" class="bson_output hidden"></code>
       </section>
       <footer class="layout__footer">
         <p>
