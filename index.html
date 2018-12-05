@@ -20,16 +20,27 @@
       <div class="layout__content">
         <section class="layout__feature">
           <h2>upload bson file</h2>
-          <p>(not available yet)</p>
-          <input id="bson_input" class="bson_input" type="file" disabled />
-          <button id="deserialize" class="button" disabled>deserialize</button>
+          <div>
+            <input id="bson_input" class="bson_input hidden" type="file" />
+            <button id="bson_input-button" class="button">select file</button>
+            <p>file selected: <span id="bson_input-filename">none</span></p>
+          </div>
+          <div class="layout__feature-container">
+            <button id="clear" class="button button--secondary">clear</button>
+            <button id="deserialize" class="button">deserialize</button>
+          </div>
         </section>
         <section class="layout__feature">
           <h2>paste bson as hex</h2>
-          <small>Supports formats: <code>BADA55</code>, <code>0xBADA55</code>, and <code>BA DA 55</code></small>
+          <small
+            >Supports formats: <code>BADA55</code>, <code>0xBADA55</code>, and
+            <code>BA DA 55</code></small
+          >
           <textarea id="bson_hexinput" class="bson_hexinput"></textarea>
           <div class="layout__feature-container">
-            <button id="clear-hex" class="button button--secondary">clear</button>
+            <button id="clear-hex" class="button button--secondary">
+              clear
+            </button>
             <button id="deserialize-hex" class="button">deserialize</button>
           </div>
         </section>
