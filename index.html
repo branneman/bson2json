@@ -26,14 +26,11 @@
         </section>
         <section class="layout__feature">
           <h2>paste bson as hex</h2>
-          <textarea
-            id="bson_hexinput"
-            class="bson_hexinput"
-            placeholder="0xBADA55"
-          ></textarea>
+          <small>Supports formats: <code>BADA55</code>, <code>0xBADA55</code>, and <code>BA DA 55</code></small>
+          <textarea id="bson_hexinput" class="bson_hexinput"></textarea>
           <div class="layout__feature-container">
-            <button id="deserialize-hex" class="button">deserialize</button>
             <button id="clear-hex" class="button button--secondary">clear</button>
+            <button id="deserialize-hex" class="button">deserialize</button>
           </div>
         </section>
       </div>

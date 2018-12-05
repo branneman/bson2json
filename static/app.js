@@ -41,9 +41,14 @@ function showError() {
 }
 
 function hexStringToUint8Array(str) {
-  // Remove prefixed 0x, if available
+  // Remove prefixed 0x, if used like 0xBADA55
   if (str.substr(0, 2) === '0x') {
     str = str.substr(2)
+  }
+
+  // Remove spaces, if used like: BA DA 55
+  if (str.substr(2, 1) === ' ') {
+    str = str.replace(/ /g, '')
   }
 
   // Split into hex chunks
