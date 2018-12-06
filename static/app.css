@@ -99,7 +99,7 @@ a {
   flex: 1 0 auto;
   width: 100%;
   margin-top: 2em;
-  padding: 1em 1em 0.8em 1em;
+  padding: 0 1em 0.8em 1em;
 }
 .layout__feature + .layout__feature {
   margin-right: 0;
@@ -128,9 +128,6 @@ a {
 .bson_output {
   display: block;
   width: 100%;
-  height: 10em;
-  min-height: 10em;
-  resize: vertical;
   white-space: pre;
   overflow: scroll;
 }
